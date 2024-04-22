@@ -173,7 +173,7 @@ const ll mod2=(998244353);
 /*
     n    - 1e5
     q    - 1e5
-    a[i] - 2e5
+    a[i] - 1e5
     TC - O( nlogn + q * ( n^(2/3) + sqrt(n) )) - O( 2.5e8 )
 */
 
