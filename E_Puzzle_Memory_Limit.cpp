@@ -101,12 +101,6 @@ void solve()
         }
     }
     cout << l << endl;
-    // if(check(2)){
-        // cout << "YES" << endl;
-    // }else{
-        // cout << "NO" << endl;
-    // }
-
 }
 
 int main() {
