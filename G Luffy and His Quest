@@ -1,4 +1,3 @@
-
 /*
 " If you set your goals ridiculously high, even if its a failure
 You will fail above everyone else's success" 
@@ -542,9 +541,14 @@ void optimal(){
         }
     }
 }
+int sm_n,sm_q;
 void transcendent(int tc)
 {    
     cin>>n>>q;
+    assert(n>=1 and n<=2e5);
+    assert(q>=1 and q<=2e5);
+    sm_n+=n;
+    sm_q+=q;
     FOR(i,1,n+1)cin>>a[i];
     // brute();  
     optimal();
@@ -573,6 +577,8 @@ int32_t main()
             //cerr<<endl<<"----Test:"<<tc<<"----"<<endl;
             transcendent(tc);
     }
+    assert(sm_n<=2e5);
+    assert(sm_q<=2e5);
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
     //cerr << "Time measured: " << elapsed.count() * 1e-9 << " seconds.\n"; 
