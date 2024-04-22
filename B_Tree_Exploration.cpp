@@ -121,25 +121,18 @@ struct LCA{
 void solve()
 {
     cin >> n;
-    assert(n >= 1 && n <= 1e5);
     adj.resize(n+1);
     LCA lc(n);
     for(int i = 0 ; i < n-1 ; i ++){
         ll u, v; cin >> u >> v;
-        assert(u != v && u >= 1 && u <= n && v >= 1 && v <= n);
         lc.add_edge(u, v);
     }
     value.resize(n+1);
     for(int i = 1 ; i<= n ; i ++) cin >> value[i];
-    for(int i = 1 ; i <= n ; i ++){
-        assert(value[i] >= 0 && value[i] <= 1e9);
-    }
     lc.dfs();
     ll q; cin >> q;
-    assert(q >= 1 && q <= 1e5);
     while(q--){
         ll u, v; cin >> u >> v;
-        assert(u != v && u >= 1 && u <= n && v >= 1 && v <= n);
         ll lca = lc.lca(u ,v);
         ll d = lc.dist(u, v), du = lc.dist(u, lca);
         ll l = 0, r = d;
@@ -173,8 +166,6 @@ void solve()
                     ll vv = lc.valuv(u, x);
                     ll totv = lc.valuv(u, v);
                     ll remv = totv-vv;
-                    // dbg(u, x);
-                    // dbg(vv, remv);
                     ll totnum = d+1, numv = mid+1;
                     ll remnum = totnum-numv;
                     vv += ((numv)*(numv+1))/2;
@@ -188,7 +179,6 @@ void solve()
                 l = mid+1;
             }
         }
-        // dbg(d, l);
         ll hh = d-l+1;
         cout << hh << endl;
     }
